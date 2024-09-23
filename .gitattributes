@@ -1,0 +1,16 @@
+# Set the default behavior, in case `core.autocrlf` is not set.
+* text=auto
+
+# Explicitly specify line endings for all file types in this repository
+# to simplify cross-platform development.
+
+# File types which we know are binary
+
+# Prefer LF for most file types
+*.md text eol=lf
+
+# Prefer LF for these files
+.editorconfig text eol=lf
+.gitattributes text eol=lf
+
+# Use CRLF for Windows-specific file types
