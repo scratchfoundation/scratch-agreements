@@ -8,6 +8,7 @@
 
 # Prefer LF for most file types
 *.md text eol=lf
+*.yml text eol=lf
 
 # Prefer LF for these files
 .editorconfig text eol=lf
