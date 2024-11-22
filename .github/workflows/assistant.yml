@@ -4,16 +4,7 @@ on:
     types: [created]
   pull_request_target:
     types: [opened,closed,synchronize]
-  workflow_call:
-    secrets:
-      # We need a token to be passed in from the caller until/unless GitHub implements this improvement:
-      # https://github.com/github/roadmap/issues/636
-      GHA_AGREEMENTS_PAT:
-        description: 'Access token for reading and committing to the signature repository'
-        required: true
 
-# The permissions here are for when the workflow is triggered in its home repository.
-# Workflows calling this one should match these permissions in their own repositories.
 permissions:
   actions: write
   contents: read
