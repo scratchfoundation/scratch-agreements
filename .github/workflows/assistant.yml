@@ -37,4 +37,4 @@ jobs:
           path-to-signatures: 'signatures/version1/cla.json'
           path-to-document: 'https://github.com/scratchfoundation/scratch-agreements/blob/main/CLA.md'
           branch: 'main'
-          allowlist: bot/*
+          allowlist: semantic-release-bot,*[bot]
