@@ -1,3 +1,12 @@
 {
-   "signedContributors": []
+  "signedContributors": [
+    {
+      "name": "cwillisf",
+      "id": 7019101,
+      "comment_id": 2498986868,
+      "created_at": "2024-11-25T20:38:58Z",
+      "repoId": 769219229,
+      "pullRequestNo": 68
+    }
+  ]
 }
