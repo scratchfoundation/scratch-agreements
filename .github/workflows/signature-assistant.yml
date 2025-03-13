@@ -42,9 +42,9 @@ jobs:
           # If a former Scratch Team member is in this list and becomes an active third-party contributor under the
           # same username, they should be removed from this allowlist and asked to sign the CLA.
           allowlist: >-
-            andy O'Neill,
+            Andy O'Neill,
             chrisgarrity,
-            dd,
+            DD Liu,
             fsih,
             paulkaplan,
             semantic-release-bot,
