@@ -12,9 +12,11 @@ permissions:
   statuses: write
 
 jobs:
-  CLAAssistant:
+  CLA-Assistant:
     runs-on: ubuntu-latest
     steps:
+      - uses: scratchfoundation/scratch-agreements/.github/actions/cla-allowlist@main
+        id: cla-allowlist
       - name: "CLA Assistant"
         if: github.event_name == 'pull_request_target' ||
           (
@@ -41,11 +43,4 @@ jobs:
           #
           # If a former Scratch Team member is in this list and becomes an active third-party contributor under the
           # same username, they should be removed from this allowlist and asked to sign the CLA.
-          allowlist: >-
-            Andy O'Neill,
-            chrisgarrity,
-            DD Liu,
-            fsih,
-            paulkaplan,
-            semantic-release-bot,
-            *[bot]
+          allowlist: ${{ steps.cla-allowlist.outputs.allowlist }}
