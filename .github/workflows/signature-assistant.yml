@@ -4,6 +4,9 @@ on:
     types: [created]
   pull_request_target:
     types: [opened, closed, synchronize]
+  push:
+    branches:
+      - shared-allowlist
 
 permissions:
   actions: write
@@ -15,8 +18,10 @@ jobs:
   CLA-Assistant:
     runs-on: ubuntu-latest
     steps:
-      - uses: scratchfoundation/scratch-agreements/.github/actions/cla-allowlist@main
+      - uses: scratchfoundation/scratch-agreements/.github/actions/cla-allowlist@shared-allowlist
         id: cla-allowlist
+      - name: Debug CLA allowlist
+        run: 'echo "CLA allowlist: ${{ steps.cla-allowlist.outputs.allowlist }}"'
       - name: "CLA Assistant"
         if: github.event_name == 'pull_request_target' ||
           (
