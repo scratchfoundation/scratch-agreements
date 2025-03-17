@@ -8,7 +8,7 @@ try {
         .map(line => line.trim())
         .filter(line => line.length > 0)
         .join(',');
-    actionsCore.setOutput('allow', allowList);
+    actionsCore.setOutput('allowlist', allowList);
 } catch (error) {
     actionsCore.setFailed(error.message);
 }
