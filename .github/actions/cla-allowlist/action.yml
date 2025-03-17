@@ -5,4 +5,4 @@ outputs:
     description: 'The list of users and bots who are exempt from signing the CLA'
 runs:
   using: 'node20'
-  main: 'index.js'
+  main: 'index.mjs'
