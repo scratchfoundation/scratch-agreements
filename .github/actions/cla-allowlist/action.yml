@@ -1,0 +1,7 @@
+name: 'Collect CLA Allowlist'
+description: 'Collects the centralized list of users and bots who are exempt from signing the CLA'
+outputs:
+  allowlist: ${{ steps.collect.outputs.allowlist }}
+runs:
+  using: 'node20'
+  main: 'index.js'
