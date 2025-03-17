@@ -1,0 +1,14 @@
+name: 'Collect CLA Allowlist'
+description: 'Collects the centralized list of users and bots who are exempt from signing the CLA'
+outputs:
+  allowlist:
+    description: 'The list of users and bots who are exempt from signing the CLA'
+    value: ${{ steps.cla-allowlist.outputs.allowlist }}
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Get CLA Allowlist'
+      id: cla-allowlist
+      shell: bash
+      run: |
+        echo "allowlist=$(jq -r 'join(",")' "${GITHUB_ACTION_PATH}/allowlist.json")" >> "$GITHUB_OUTPUT"
