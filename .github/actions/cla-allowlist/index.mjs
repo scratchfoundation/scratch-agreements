@@ -1,8 +1,10 @@
 import * as fs from 'fs/promises';
+import * as path from 'path';
 import * as actionsCore from '@actions/core';
 
 try {
-    const allowListFileContents = await fs.readFile('allowlist.txt', 'utf8');
+    const allowListFilePath = path.resolve(__dirname, 'allowlist.txt');
+    const allowListFileContents = await fs.readFile(allowListFilePath, 'utf8');
     const allowList = allowListFileContents
         .split('\n')
         .map(line => line.trim())
