@@ -3,6 +3,15 @@ description: 'Collects the centralized list of users and bots who are exempt fro
 outputs:
   allowlist:
     description: 'The list of users and bots who are exempt from signing the CLA'
+    value: ${{ steps.cla-allowlist.outputs.allowlist }}
 runs:
-  using: 'node20'
-  main: 'index.mjs'
+  using: 'composite'
+  steps:
+    - name: 'Get CLA Allowlist'
+      id: cla-allowlist
+      shell: bash
+      run: |
+        echo "allowlist=$(jq -r 'join(",")' allowlist.json)" >> "$GITHUB_OUTPUT"
+    - name: 'Debug CLA Allowlist'
+      shell: bash
+      run: 'echo "CLA allowlist: ${{ steps.cla-allowlist.outputs.allowlist }}"'

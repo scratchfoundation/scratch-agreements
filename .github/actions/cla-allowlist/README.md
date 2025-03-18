@@ -13,11 +13,3 @@ comes to legal scenarios.
 Enter this slightly-silly solution: this action just keeps track of the allow-list in a central location with the goal
 that we can access this central location without any extra secrets or tokens or anything. That should let us use it
 from a copy of the `signature-assistant.yml` workflow running in just about any repository. Fingers crossed.
-
-## Why a JavaScript action?
-
-The signature assistant expects a comma-separated list stored in a single string. Spreading that across multiple lines
-in YAML is a little awkward, especially when you allow for names that include an apostrophe. Funneling that through a
-shell script, which is the other way I thought about doing this, seemed like it could be error-prone as well. Building
-the action using JS and storing the usernames in a text file just seemed like the best compromise between reliable
-string processing and ease of development.

@@ -1,7 +1,0 @@
-Andy O'Neill
-chrisgarrity
-DD Liu
-fsih
-paulkaplan
-semantic-release-bot
-*[bot]
