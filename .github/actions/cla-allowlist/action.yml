@@ -11,7 +11,7 @@ runs:
       id: cla-allowlist
       shell: bash
       run: |
-        echo "allowlist=$(jq -r 'join(",")' allowlist.json)" >> "$GITHUB_OUTPUT"
+        echo "allowlist=$(jq -r 'join(",")' "${GITHUB_ACTION_PATH}/allowlist.json")" >> "$GITHUB_OUTPUT"
     - name: 'Debug CLA Allowlist'
       shell: bash
       run: 'echo "CLA allowlist: ${{ steps.cla-allowlist.outputs.allowlist }}"'
