@@ -3,7 +3,8 @@ import * as path from 'path';
 import * as actionsCore from '@actions/core';
 
 try {
-    const allowListFilePath = path.resolve(__dirname, 'allowlist.txt');
+    // Warning: `import.meta.dirname` requires Node.js 20+
+    const allowListFilePath = path.resolve(import.meta.dirname, 'allowlist.txt');
     const allowListFileContents = await fs.readFile(allowListFilePath, 'utf8');
     const allowList = allowListFileContents
         .split('\n')
