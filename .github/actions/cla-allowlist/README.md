@@ -14,3 +14,16 @@ comes to legal records.
 Enter this slightly-silly solution: this action just keeps track of the allow-list in a central location with the goal
 that we can access this central location without any extra secrets or tokens or anything. That should let us use it
 from a copy of the `signature-assistant.yml` workflow running in just about any repository. Fingers crossed.
+
+## When should I add a username to the allowlist?
+
+Add a username to the allowlist if:
+
+- it represents a bot
+- the Scratch Foundation already owns their contributions but they aren't available to sign the CLA
+
+That latter case includes folks who contributed as part of or on behalf of the Scratch Team before the CLA was in
+place. It does NOT include community members who contributed before the CLA was in place.
+
+If a former Scratch Team member is in this list and becomes an active third-party contributor under the same username,
+they should be removed from this allowlist and asked to sign the CLA.

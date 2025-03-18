@@ -13,16 +13,16 @@ permissions:
 
 jobs:
   CLA-Assistant:
+    if: github.event_name == 'pull_request_target' ||
+      (
+        github.event.comment.body == 'recheck' ||
+        github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA'
+      )
     runs-on: ubuntu-latest
     steps:
       - uses: scratchfoundation/scratch-agreements/.github/actions/cla-allowlist@main
         id: cla-allowlist
       - name: "CLA Assistant"
-        if: github.event_name == 'pull_request_target' ||
-          (
-            github.event.comment.body == 'recheck' ||
-            github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA'
-          )
         uses: contributor-assistant/github-action@ca4a40a7d1004f18d9960b404b97e5f30a505a08 # v2.6.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -34,13 +34,4 @@ jobs:
           path-to-signatures: "signatures/version1/cla.json"
           path-to-document: "https://github.com/scratchfoundation/scratch-agreements/blob/main/CLA.md"
           branch: "main"
-          # Add a username to the allowlist if:
-          # - it represents a bot
-          # - the Scratch Foundation already owns their contributions but they aren't available to sign the CLA
-          #
-          # That latter case includes folks who contributed as part of or on behalf of the Scratch Team before the
-          # CLA was in place. It does NOT include community members who contributed before the CLA was in place.
-          #
-          # If a former Scratch Team member is in this list and becomes an active third-party contributor under the
-          # same username, they should be removed from this allowlist and asked to sign the CLA.
           allowlist: ${{ steps.cla-allowlist.outputs.allowlist }}
