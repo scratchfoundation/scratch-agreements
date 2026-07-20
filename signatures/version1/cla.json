@@ -479,6 +479,14 @@
       "created_at": "2026-07-01T19:16:17Z",
       "repoId": 41567275,
       "pullRequestNo": 10280
+    },
+    {
+      "name": "Naohiro2g",
+      "id": 587586,
+      "comment_id": 5023082078,
+      "created_at": "2026-07-20T13:59:07Z",
+      "repoId": 863187089,
+      "pullRequestNo": 10
     }
   ]
 }
