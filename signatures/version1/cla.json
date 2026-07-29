@@ -487,6 +487,14 @@
       "created_at": "2026-07-20T13:59:07Z",
       "repoId": 863187089,
       "pullRequestNo": 10
+    },
+    {
+      "name": "vkaragyaurov",
+      "id": 33264385,
+      "comment_id": 5117618401,
+      "created_at": "2026-07-29T12:16:43Z",
+      "repoId": 650719405,
+      "pullRequestNo": 660
     }
   ]
 }
