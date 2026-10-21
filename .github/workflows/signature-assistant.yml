@@ -13,10 +13,15 @@ permissions:
 
 jobs:
   CLA-Assistant:
-    if: github.event_name == 'pull_request_target' ||
+    # Forks do not have access to the PAT used to write signatures to this repository.
+    if: |
+      github.event.repository.fork == false &&
       (
-        github.event.comment.body == 'recheck' ||
-        github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA'
+        github.event_name == 'pull_request_target' ||
+        (
+          github.event.comment.body == 'recheck' ||
+          github.event.comment.body == 'I have read the CLA Document and I hereby sign the CLA'
+        )
       )
     runs-on: ubuntu-latest
     steps:
