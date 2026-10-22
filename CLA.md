@@ -34,7 +34,7 @@ Submitting those Contributions.
 ### 3. Originality of Work
 
 You represent and warrant that each of your Contributions is entirely your original work, and that the Contribution,
-whether alone or in combination with the Project, will infringe upon or misappropriate the intellectual property or
+whether alone or in combination with the Project, will not infringe upon or misappropriate the intellectual property or
 other rights of any third party. Should you wish to Submit materials that are not your original work, you may Submit
 them separately to the Project if you (1) retain all copyright and license information that was in the materials as
 you received them, (2) in the description accompanying your Contribution, include the phrase “Contribution containing
